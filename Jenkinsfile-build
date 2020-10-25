@@ -1,9 +1,11 @@
  node {
+     def app
+     
      stage('Clone repository') {
          checkout scm 
      }
 
      stage('Build image') {
-         app = docker.build("bhs9610/jenkins-docker")
+         app = docker.build("bhs9610/udin")
      }
 }
