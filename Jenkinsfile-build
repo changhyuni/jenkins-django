@@ -4,6 +4,6 @@
      }
 
      stage('Build image') {
-         app = docker.build("changman/jenkins:$BUILD_NUMBER")
+         app = docker.build("bhs9610/jenkins-docker:$BUILD_NUMBER")
      }
 }
