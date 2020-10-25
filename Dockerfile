@@ -1,13 +1,8 @@
-FROM python:3.8
+FROM ubuntu:18.04
+RUN ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+RUN apt upgrade -y
+RUN apt-get update -y
+RUN apt-get install nginx -y
+RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
-RUN apt-get update \
-    && rm -rf /var/lib/apt/lists/*
-
-
-COPY . /app
-WORKDIR /app
-
-COPY requirements.txt ./
-RUN pip install -r requirements.txt
-COPY . .
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["nginx"]
