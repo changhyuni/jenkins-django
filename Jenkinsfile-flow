@@ -9,7 +9,9 @@ node {
      
      stage('Create ECR') {
          steps {
-             sh 'python3 ecr.py'
+         '''
+         sh 'python3 ecr.py'
+         '''
          }
      }
 
