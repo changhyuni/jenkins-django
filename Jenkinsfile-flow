@@ -8,9 +8,7 @@ node {
      }
      
      stage('Create ECR') {
-         steps {
-             sh 'python ecr.py'
-         }
+         sh 'python ecr.py'
      }
 
      stage('Push image') {
