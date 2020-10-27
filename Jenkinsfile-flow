@@ -2,7 +2,7 @@ node {
  stage('Clone repository') {
      checkout scm
  }
-0
+
  stage('Build image') {
      app = docker.build("chang/man")
  }
