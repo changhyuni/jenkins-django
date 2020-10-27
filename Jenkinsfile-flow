@@ -4,15 +4,15 @@ node {
  }
 
  stage('Build image') {
-     app = docker.build("chang/man")
+     app = docker.build("475667265637.dkr.ecr.ap-northeast-2.amazonaws.com/chang")
  }
  
  stage('Create ECR') {
-         step {
-           sh '''
-             pip3 install boto3 --upgrade
-             python3 ecr.py
-             '''
+     steps {
+     '''
+     sh 'pip3 install boto3 --upgrade'
+     sh 'python3 ecr.py'
+     '''
      }
  }
 
@@ -25,4 +25,4 @@ node {
          app.push("${env.BUILD_NUMBER}")
          app.push("latest")
  }
-} 
+} }
