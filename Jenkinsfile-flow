@@ -8,10 +8,10 @@ node {
  }
  
  stage('Create ECR') {
-     '''
-     sh 'pip3 install boto3 --upgrade'
-     sh 'python3 ecr.py'
-     '''
+     sh '''
+         pip3 install boto3 --upgrade'
+         python3 ecr.py'
+        '''
  }
 
  stage('Push image') {
