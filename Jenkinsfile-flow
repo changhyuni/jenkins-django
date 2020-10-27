@@ -8,13 +8,11 @@ node {
  }
  
  stage('Create ECR') {
-     steps {
-        step{
-          sh '''
-            pip3 install boto3 --upgrade
-            python3 ecr.py
-            '''
-        }
+         step {
+           sh '''
+             pip3 install boto3 --upgrade
+             python3 ecr.py
+             '''
      }
  }
 
