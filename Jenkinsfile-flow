@@ -4,12 +4,8 @@ node {
  }
  
   stage('Build packer') {
-     steps {
-         dir('packer') {
-             sh 'git clone https://github.com/changhyuni/packer'
-             sh 'packer build ec2.json'
-         }
-     }
+      sh 'git clone https://github.com/changhyuni/packer'
+      sh 'packer build ec2.json'
  }
 
 
