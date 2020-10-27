@@ -3,9 +3,9 @@ node {
      checkout scm
  }
  
-  stage('Build packer') {
-      sh 'git clone https://github.com/changhyuni/packer'
-      sh 'packer build ec2.json'
+ stage('Build packer') {
+     sh 'git clone https://github.com/changhyuni/packer'
+     sh 'packer build ec2.json'
  }
 
 
